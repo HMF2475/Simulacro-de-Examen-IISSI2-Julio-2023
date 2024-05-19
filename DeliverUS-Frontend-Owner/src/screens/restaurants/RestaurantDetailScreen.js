@@ -124,11 +124,11 @@ export default function RestaurantDetailScreen ({ navigation, route }) {
               styles.actionButton
             ]}>
           <View style={[{ flex: 1, flexDirection: 'row', justifyContent: 'center' }]}>
-           {!item.promote && <> <MaterialCommunityIcons name='star-box' color={'white'} size={20}/>
+           {!item.promote && <> <MaterialCommunityIcons name='star-outline' color={'white'} size={20}/>
             <TextRegular textStyle={styles.text}>
               Promote
             </TextRegular></>}
-            {item.promote && <> <MaterialCommunityIcons name='star-box-outline' color={'white'} size={20}/>
+            {item.promote && <> <MaterialCommunityIcons name='star' color={'white'} size={20}/>
             <TextRegular textStyle={styles.text}>
               Demote
             </TextRegular></>}
