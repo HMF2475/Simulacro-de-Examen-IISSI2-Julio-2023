@@ -19,7 +19,7 @@ export default function CreateRestaurantScreen ({ navigation }) {
   const [restaurantCategories, setRestaurantCategories] = useState([])
   const [backendErrors, setBackendErrors] = useState()
 
-  const initialRestaurantValues = { name: null, description: null, address: null, postalCode: null, url: null, shippingCosts: null, email: null, phone: null, restaurantCategoryId: null }
+  const initialRestaurantValues = { name: null, description: null, address: null, postalCode: null, url: null, shippingCosts: null, email: null, phone: null, discount: null, restaurantCategoryId: null }
   const validationSchema = yup.object().shape({
     name: yup
       .string()
@@ -49,6 +49,8 @@ export default function CreateRestaurantScreen ({ navigation }) {
       .string()
       .nullable()
       .max(255, 'Phone too long'),
+    discount: yup
+      .number(),
     restaurantCategoryId: yup
       .number()
       .positive()
@@ -160,6 +162,10 @@ export default function CreateRestaurantScreen ({ navigation }) {
               <InputItem
                 name='phone'
                 label='Phone:'
+              />
+              <InputItem
+                name='discount'
+                label='Discount:'
               />
 
               <DropDownPicker
