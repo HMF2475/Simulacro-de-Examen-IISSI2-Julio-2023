@@ -48,6 +48,7 @@ const loadFileRoutes = (app) => {
     .patch(
       isLoggedIn,
       hasRole('owner'),
+      ProductMiddleware.checkRestaurantHasDiscount,
       ProductController.promoteDemote
     )
 }
